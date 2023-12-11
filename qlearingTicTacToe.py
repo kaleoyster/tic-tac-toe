@@ -14,18 +14,18 @@ class Player(object):
 
         available_moves_list = []
         for i in range(0,9):
-        	if TicTacToe_board[i] == ' ':
-        	    available_moves_list.append(i+1)
+            if TicTacToe_board[i] == ' ':
+                available_moves_list.append(i+1)
         return available_moves_list
 
     def reward(self, value, TicTacToe_board):
         try :
-    	   if self.value == -1:
-    	   	  print("Computer Wins")
-    	   else:
-    	   	  print("You Win")
-    	except:
-    	   pass
+           if self.value == -1:
+               print("Computer Wins")
+           else:
+               print("You Win")
+        except:
+            pass
 
 class QL(Player):
     def __init__(self, e=0.4, a=0.5, g=0.9):
@@ -61,8 +61,8 @@ class QL(Player):
         if listofq.count(maximumParameter) > 1:
             best_options = []
             for i in range(len(available_moves_l)):
-            	if listofq[i] == maximumParameter:
-            		best_options.append(i)
+                if listofq[i] == maximumParameter:
+                    best_options.append(i)
             i = random.choice(best_options)
         else:
             i = listofq.index(maximumParameter)
@@ -71,10 +71,10 @@ class QL(Player):
         return available_moves_l[i]
 
     def reward(self, value, TicTacToe_board):
-    	T_board = self.last_TicTacToe_board
-      	T_last_move = self.last_move
-       	T_value = value
-       	T_TicTacToe = tuple(TicTacToe_board)
+        T_board = self.last_TicTacToe_board
+        T_last_move = self.last_move
+        T_value = value
+        T_TicTacToe = tuple(TicTacToe_board)
         if self.last_move:
            self.q_learning(T_board, T_last_move, T_value, T_TicTacToe)
 
@@ -83,8 +83,8 @@ class QL(Player):
         ## change for loop
         list_newq = []
         for a in self.available_moves(state):
-        	newq = self.getParameterQ(result_state, a)
-        	list_newq.append(newq)
+            newq = self.getParameterQ(result_state, a)
+            list_newq.append(newq)
         maximumParameternew = max(list_newq)
         reward_q = (reward + self.g * maximumParameternew) - prev
         state_action = prev + self.a * reward_q
