@@ -12,9 +12,17 @@
 ### 🎬 Getting started
 The following are the steps to setup this project:
 
-####  To run tic-tac-toe
+####  To download tic-tac-toe
 
 ```zsh
 git clone https://github.com/kaleoyster/tic-tac-toe.git
 ```
+
+####  To run tic-tac-toe
+
+```zsh
+cd tic-tac-toe
+python qLearningTicTacToe.py
+```
+
 
