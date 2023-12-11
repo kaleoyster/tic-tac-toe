@@ -3,6 +3,9 @@
         A Q-learning program to play tic-tac-toe
 </h2>
 
+![tic-tac-toe interface](tic-tac-toe.png){:target='Apple', style='align:center'}
+**Preview of the command line interface**
+
 ### 🎯 Objective
 - A program that plays Tic-Tac-Toe using Q-Learning. 
 
